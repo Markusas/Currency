@@ -1,3 +1,5 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.Map;
 
 public class Bank {
@@ -49,6 +51,10 @@ public class Bank {
 
     public static void main(String[] args) throws Exception {
         HttpUrlConnection connection = new HttpUrlConnection();
-        connection.getAllcurrency();
+        String allCurrencyAsJson = connection.getAllcurrency();
+        ObjectMapper objectMapper = new ObjectMapper();
+        Bank bank = objectMapper.readValue(allCurrencyAsJson, Bank.class);
+        //test
+        System.out.println(bank.rates.get("GBP"));
     }
 }
