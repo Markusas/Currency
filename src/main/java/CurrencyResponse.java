@@ -1,26 +1,17 @@
+import java.math.BigDecimal;
 import java.util.Map;
 
-public class Bank {
-    private boolean success;
-    private String timestamp;
-    private String base;
+public class CurrencyResponse {
     private String date;
-    private Map<String, Double> rates;
+    private String base;
+    private Map<String, BigDecimal> rates;
 
-    public boolean isSuccess() {
-        return success;
+    public String getDate() {
+        return date;
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getBase() {
@@ -31,19 +22,13 @@ public class Bank {
         this.base = base;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public Map<String, Double> getRates() {
+    public Map<String, BigDecimal> getRates() {
         return rates;
     }
 
-    public void setRates(Map<String, Double> rates) {
+    public void setRates(Map<String, BigDecimal> rates) {
         this.rates = rates;
     }
+
+
 }
